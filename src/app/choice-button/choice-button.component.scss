@@ -1,0 +1,24 @@
+.choice-button {
+    padding: 5em;
+    border-radius: 100%;
+    aspect-ratio: 1;
+    display: grid;
+    place-items: center;
+
+    &--rock {
+        border: 2em solid red;
+    }
+
+    &--paper {
+        border: 2em solid blue;
+        
+    }
+
+    &--scissors {
+        border: 2em solid yellow;
+    }
+
+    img {
+        width: 10em;
+    }
+}
