@@ -1,24 +1,35 @@
 .choice-button {
-    padding: 5em;
+    position: relative;
+    padding: 3em;
     border-radius: 100%;
     aspect-ratio: 1;
     display: grid;
     place-items: center;
+    border: none;
 
-    &--rock {
-        border: 2em solid red;
+    &--rock::before,
+    &--paper::before,
+    &--scissors::before {
+        border-radius: 100%;
+        z-index: -1;
+        content: '';
+        position: absolute;
+        inset: -25px;
     }
 
-    &--paper {
-        border: 2em solid blue;
-        
+    &--rock::before {
+        background: var(--rock-gradient);
     }
 
-    &--scissors {
-        border: 2em solid yellow;
+    &--paper::before {
+        background: var(--paper-gradient);
+    }
+
+    &--scissors::before {
+        background: var(--scissors-gradient);
     }
 
     img {
-        width: 10em;
+        width: 6em;
     }
 }
