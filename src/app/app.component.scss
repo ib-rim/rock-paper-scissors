@@ -1,0 +1,29 @@
+.header {
+    border: 2px solid var(--outline);
+    border-radius: 10px;
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    max-width: 50vw;
+    margin: 0 auto;
+}
+
+.score-display {
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 1em 3em;
+    text-align: center;
+}
+
+.score-title {
+    color: var(--text-score);
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.score-value {
+    color: var(--text-dark);
+    font-size: 3rem;
+    font-family: 'BarlowSemiCondensedBlack';
+}
