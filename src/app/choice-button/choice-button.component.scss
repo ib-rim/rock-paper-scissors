@@ -9,24 +9,45 @@
 
     &--rock::before,
     &--paper::before,
-    &--scissors::before {
-        border-radius: 100%;
-        z-index: -1;
+    &--scissors::before,
+    &--rock::after,
+    &--paper::after,
+    &--scissors::after {
         content: '';
         position: absolute;
+        border-radius: 100%;
+    }
+
+    //Main border
+    &--rock::before,
+    &--paper::before,
+    &--scissors::before {
+        z-index: -1;
         inset: -25px;
+    }
+
+    //Internal shadow
+    &--rock::after,
+    &--paper::after,
+    &--scissors::after {
+        inset: 9px 0 0;
+        z-index: 1;
+        box-shadow: var(--internal-shadow);
     }
 
     &--rock::before {
         background: var(--rock-gradient);
+        box-shadow: var(--rock-shadow);
     }
 
     &--paper::before {
         background: var(--paper-gradient);
+        box-shadow: var(--paper-shadow);
     }
 
     &--scissors::before {
         background: var(--scissors-gradient);
+        box-shadow: var(--scissors-shadow);
     }
 
     img {
