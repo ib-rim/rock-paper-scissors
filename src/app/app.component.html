@@ -6,8 +6,8 @@
     </div>
 </header>
 <div class="choice-buttons">
-    <app-choice-button choice="paper"></app-choice-button>
-    <app-choice-button choice="rock"></app-choice-button>
-    <app-choice-button choice="scissors"></app-choice-button>
+    <app-choice-button label="paper" (playerChoice)="compareChoices($event, randomChoice())"></app-choice-button>
+    <app-choice-button label="rock" (playerChoice)="compareChoices($event, randomChoice())"></app-choice-button>
+    <app-choice-button label="scissors" (playerChoice)="compareChoices($event, randomChoice())"></app-choice-button>
 </div>
 <button class="rules-button">RULES</button>
