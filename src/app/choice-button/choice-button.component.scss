@@ -6,6 +6,14 @@
     display: grid;
     place-items: center;
     border: none;
+    width: 10em;
+    background: hsl(223, 46%, 17%);
+
+    &--rock,
+    &--paper,
+    &--scissors {
+        background-color: var(--white);
+    }
 
     &--rock::before,
     &--paper::before,

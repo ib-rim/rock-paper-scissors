@@ -5,9 +5,23 @@
         <div class="score-value">12</div>
     </div>
 </header>
-<div class="choice-buttons">
+<!-- <div class="choice-buttons">
     <app-choice-button label="paper" (playerChoice)="compareChoices($event, randomChoice())"></app-choice-button>
     <app-choice-button label="rock" (playerChoice)="compareChoices($event, randomChoice())"></app-choice-button>
     <app-choice-button label="scissors" (playerChoice)="compareChoices($event, randomChoice())"></app-choice-button>
+</div> -->
+<div class="final-choices">
+    <div class="final-choice">
+        <p class="picked-text">YOU PICKED</p>
+        <app-choice-button label="rock"></app-choice-button>
+    </div>
+    <div class="result">
+        <p class="result-text">YOU WIN</p>
+        <button class="play-again-button">PLAY AGAIN</button>
+    </div>
+    <div class="final-choice">
+        <p class="picked-text">THE HOUSE PICKED</p>
+        <app-choice-button label=""></app-choice-button>
+    </div>
 </div>
 <button class="rules-button">RULES</button>
