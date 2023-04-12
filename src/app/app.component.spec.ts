@@ -24,37 +24,37 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('Rock Paper Scissors');
   });
 
-  it(`Player wins when choosing rock against scissors`, () => {
+  it(`should give return player as the winner when choosing rock against scissors`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app.compareChoices('rock', 'scissors')).toEqual('player');
   });
 
-  it(`Player wins when choosing paper against rock`, () => {
+  it(`should give return player as the winner when choosing paper against rock`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app.compareChoices('paper', 'rock')).toEqual('player');
   });
 
-  it(`Player wins when choosing scissors against paper`, () => {
+  it(`should give return player as the winner when choosing scissors against paper`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app.compareChoices('scissors', 'paper')).toEqual('player');
   });
 
-  it(`CPU wins when choosing rock against scissors`, () => {
+  it(`should return CPU as the winner when choosing scissors against rock`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app.compareChoices('scissors', 'rock')).toEqual('cpu');
   });
 
-  it(`CPU wins when choosing paper against rock`, () => {
+  it(`should return CPU as the winner when choosing rock against paper`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app.compareChoices('rock', 'paper')).toEqual('cpu');
   });
 
-  it(`CPU wins when choosing scissors against paper`, () => {
+  it(`should return CPU as the winner when choosing paper against scissors`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app.compareChoices('paper', 'scissors')).toEqual('cpu');
