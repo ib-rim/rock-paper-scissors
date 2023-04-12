@@ -6,7 +6,16 @@ import { Component } from '@angular/core';
     styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-    title = 'Rock Paper Scissors';
+    title: string = 'Rock Paper Scissors';
+    gameEnded: boolean = false;
+    resultText: string = '';
+    playerChoice: string = '';
+    cpuChoice: string = '';
+
+    restartGame = () => {
+        this.gameEnded = false;
+        this.resultText = '';
+    }
 
     randomChoice = (): string => {
         let choice: string = "rock";
@@ -43,15 +52,17 @@ export class AppComponent {
     }
 
     endGame = (winner: string | null, playerChoice: string, cpuChoice: string) => {
-        console.log(`Player: ${playerChoice} vs CPU: ${cpuChoice}`);
+        this.gameEnded = true;
+        this.playerChoice = playerChoice;
+        this.cpuChoice = cpuChoice;
         if (winner === "player") {
-            console.log("You win!");
+            this.resultText ="YOU WIN";
         }
         else if (winner === "cpu") {
-            console.log("You lose!")
+            this.resultText ="YOU LOSE";
         }
         else {
-            console.log("Draw!")
+            this.resultText ="DRAW";
         }
     }
 }
