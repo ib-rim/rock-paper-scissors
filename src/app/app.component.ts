@@ -20,22 +20,26 @@ export class AppComponent {
         return choice;
     }
 
-    compareChoices = (playerChoice: string, cpuChoice: string) => {
-        if (playerChoice === cpuChoice) {
-            this.endGame(null, playerChoice, cpuChoice);
-        }
-        else if ((playerChoice === "rock" && cpuChoice === "scissors") ||
+    handleChoices = (playerChoice: string, cpuChoice: string) => {
+        let winner: string | null = this.compareChoices(playerChoice, cpuChoice);
+        this.endGame(winner, playerChoice, cpuChoice);
+    }
+
+    compareChoices = (playerChoice: string, cpuChoice: string): string | null => {
+        let winner: string | null = null;
+        if ((playerChoice === "rock" && cpuChoice === "scissors") ||
             (playerChoice === "paper" && cpuChoice === "rock") ||
             (playerChoice === "scissors" && cpuChoice === "paper")) {
 
-            this.endGame("player", playerChoice, cpuChoice);
+            winner = "player";
         }
         else if ((playerChoice === "rock" && cpuChoice === "paper") ||
             (playerChoice === "paper" && cpuChoice === "scissors") ||
             (playerChoice === "scissors" && cpuChoice === "rock")) {
 
-            this.endGame("cpu", playerChoice, cpuChoice);
+            winner = "cpu";
         }
+        return winner;
     }
 
     endGame = (winner: string | null, playerChoice: string, cpuChoice: string) => {
