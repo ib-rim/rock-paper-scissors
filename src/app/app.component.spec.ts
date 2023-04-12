@@ -59,4 +59,25 @@ describe('AppComponent', () => {
     const app = fixture.componentInstance;
     expect(app.compareChoices('paper', 'scissors')).toEqual('cpu');
   });
+
+  it(`should return rock based on the result of Math.random`, () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+    spyOn(Math, 'random').and.returnValues(0, 0.3333);
+    expect(app.randomChoice()).toEqual('rock');
+  });
+
+  it(`should return paper based on the result of Math.random`, () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+    spyOn(Math, 'random').and.returnValues(0.3334, 0.6666);
+    expect(app.randomChoice()).toEqual('paper');
+  });
+
+  it(`should return scissors based on the result of Math.random`, () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+    spyOn(Math, 'random').and.returnValues(0.6667, 0.9999);
+    expect(app.randomChoice()).toEqual('scissors');
+  });
 });
