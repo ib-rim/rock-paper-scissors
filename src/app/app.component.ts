@@ -8,13 +8,17 @@ import { Component } from '@angular/core';
 export class AppComponent {
     title: string = 'Rock Paper Scissors';
     gameEnded: boolean = false;
+    showResult: boolean = false;
     resultText: string = '';
     playerChoice: string = '';
     cpuChoice: string = '';
 
     restartGame = () => {
         this.gameEnded = false;
+        this.showResult = false;
         this.resultText = '';
+        this.playerChoice = '';
+        this.cpuChoice = '';
     }
 
     randomChoice = (): string => {
@@ -54,15 +58,20 @@ export class AppComponent {
     endGame = (winner: string | null, playerChoice: string, cpuChoice: string) => {
         this.gameEnded = true;
         this.playerChoice = playerChoice;
-        this.cpuChoice = cpuChoice;
-        if (winner === "player") {
-            this.resultText ="YOU WIN";
-        }
-        else if (winner === "cpu") {
-            this.resultText ="YOU LOSE";
-        }
-        else {
-            this.resultText ="DRAW";
-        }
+        setTimeout(() => {
+            this.cpuChoice = cpuChoice;
+            if (winner === "player") {
+                this.resultText = "YOU WIN";
+            }
+            else if (winner === "cpu") {
+                this.resultText = "YOU LOSE";
+            }
+            else {
+                this.resultText = "DRAW";
+            }
+        }, 1000);
+        setTimeout(() => {
+            this.showResult = true;
+        }, 2000);
     }
 }

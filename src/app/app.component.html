@@ -15,7 +15,7 @@
         <p class="picked-text">YOU PICKED</p>
         <app-choice-button label="{{playerChoice}}"></app-choice-button>
     </div>
-    <div class="result">
+    <div class="result" *ngIf="showResult">
         <p class="result-text">{{resultText}}</p>
         <button class="play-again-button" (click)="restartGame()">PLAY AGAIN</button>
     </div>
